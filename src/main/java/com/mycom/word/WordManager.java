@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class WordManager {
     Scanner s = new Scanner(System.in);
+    WordCRUD wordCRUD;
+
+    WordManager() {
+        wordCRUD = new WordCRUD(s);
+    }
+
     public int selectMenu() {
         System.out.println("*** 영단어 마스터 ***\n" +
                 "********************\n" +
@@ -23,9 +29,30 @@ public class WordManager {
     public void start() {
         while (true){
             int menu = selectMenu();
-            if(menu == 0) break;
+            if (menu == 0) {
+                break;
+            }
+            switch (menu) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    wordCRUD.addWord();
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                default:
+                    System.out.println("없는 번호 입니다! 다시 입력해주세요!\n");
+                    break;
+            }
 
         }
-        System.out.println(menu);
     }
 }
