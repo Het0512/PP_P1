@@ -34,6 +34,7 @@ public class WordManager {
             }
             switch (menu) {
                 case 1:
+                    wordCRUD.listAll();
                     break;
                 case 2:
                     break;
