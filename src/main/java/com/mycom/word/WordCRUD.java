@@ -51,4 +51,16 @@ public class WordCRUD implements ICRUD {
         }
         System.out.println("------------------------------\n");
     }
+
+    public void listLevel() {
+        System.out.println("원하는 난이도(1,2,3) 입력 : ");
+        int chooseLevel = s.nextInt();
+        System.out.println("------------------------------");
+        for(int i = 0; i < list.size(); i++) {
+            if(chooseLevel == list.get(i).getLevel()) {
+                System.out.println((i + 1) + " " + list.get(i).toString());
+            }
+        }
+        System.out.println("------------------------------\n");
+    }
 }

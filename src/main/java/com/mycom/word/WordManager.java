@@ -37,6 +37,7 @@ public class WordManager {
                     wordCRUD.listAll();
                     break;
                 case 2:
+                    wordCRUD.listLevel();
                     break;
                 case 3:
                     break;
