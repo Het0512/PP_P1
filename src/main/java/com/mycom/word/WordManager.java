@@ -40,6 +40,7 @@ public class WordManager {
                     wordCRUD.listLevel();
                     break;
                 case 3:
+                    wordCRUD.listSearch();
                     break;
                 case 4:
                     wordCRUD.addWord();

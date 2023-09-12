@@ -63,4 +63,16 @@ public class WordCRUD implements ICRUD {
         }
         System.out.println("------------------------------\n");
     }
+
+    public void listSearch() {
+        System.out.println("원하는 단어 검색 : ");
+        String searchWord = s.next();
+        System.out.println("------------------------------");
+        for(int i = 0; i < list.size(); i++) {
+            if(list.get(i).getWord().contains(searchWord)) {
+                System.out.println((i + 1) + " " + list.get(i).toString());
+            }
+        }
+        System.out.println("------------------------------\n");
+    }
 }
