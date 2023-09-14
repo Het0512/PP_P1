@@ -53,6 +53,7 @@ public class WordManager {
                     wordCRUD.deleteWord();
                     break;
                 case 7:
+                    wordCRUD.saveFile();
                     break;
                 default:
                     System.out.println("없는 번호 입니다! 다시 입력해주세요!\n");
