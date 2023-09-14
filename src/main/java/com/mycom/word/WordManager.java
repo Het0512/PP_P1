@@ -34,30 +34,14 @@ public class WordManager {
                 break;
             }
             switch (menu) {
-                case 1:
-                    wordCRUD.listAll();
-                    break;
-                case 2:
-                    wordCRUD.listLevel();
-                    break;
-                case 3:
-                    wordCRUD.listSearch();
-                    break;
-                case 4:
-                    wordCRUD.addWord();
-                    break;
-                case 5:
-                    wordCRUD.updateWord();
-                    break;
-                case 6:
-                    wordCRUD.deleteWord();
-                    break;
-                case 7:
-                    wordCRUD.saveFile();
-                    break;
-                default:
-                    System.out.println("없는 번호 입니다! 다시 입력해주세요!\n");
-                    break;
+                case 1 -> wordCRUD.listAll();
+                case 2 -> wordCRUD.listLevel();
+                case 3 -> wordCRUD.listSearch();
+                case 4 -> wordCRUD.addWord();
+                case 5 -> wordCRUD.updateWord();
+                case 6 -> wordCRUD.deleteWord();
+                case 7 -> wordCRUD.saveFile();
+                default -> System.out.println("없는 번호 입니다! 다시 입력해주세요!\n");
             }
 
         }
