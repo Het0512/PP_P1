@@ -1,0 +1,33 @@
+3|bounty|현상금
+1|apple|사과, 사과나무
+2|row|줄, 열
+1|cat|고양이, 뒤에서 험담하는 여자
+1|dog|개, 수컷
+1|cow|암소, 젖소
+2|gentle|상냥한, 부드러운, 온화한
+1|bed|침대
+2|ill|병든, 나쁜
+2|suffer|괴로워 하다, 겪다
+3|reception|받음, 응접, 환영회
+2|yard|마당, 안뜰, 교정
+1|bad|나쁘다
+1|we|우리(들), 저희들
+2|loose|헐거운, 느슨한
+2|false|거짓
+1|he|남자, 남성
+3|cape|곶, 갑
+3|promotion|승진
+1|she|여자, 여성
+2|true|진실
+3|succession|연속, 계속
+1|they|그들
+2|issue|발행, 공포, 논쟁, 논점
+1|door|문, 문짝
+1|star|별, 별의
+2|pray|기도하다, 간청하다
+2|directly|똑바로
+3|idol|우상, 숭배물
+3|foul|불결한, 반칙, 더럽히다
+1|sun|태양, 해
+2|lean|기대다, 기울어지다
+3|glorious|영광스러운
