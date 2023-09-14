@@ -35,13 +35,13 @@ public class WordCRUD implements ICRUD {
     public void updateWord() {
         System.out.println("=> 수정할 단어 검색 : ");
         String keyword = s.next();
-        ArrayList<Integer> idlist = this.listAll(keyword);
+        ArrayList<Integer> idList = this.listAll(keyword);
         System.out.println("=> 수정할 번호 선택 : ");
         int id = s.nextInt();
         s.nextLine();
         System.out.println("=> 뜻 입력 : ");
         String meaning = s.nextLine();
-        Word word = list.get(idlist.get(id-1));
+        Word word = list.get(idList.get(id-1));
         word.setMeaning(meaning);
         System.out.println("단어가 수정되었습니다.");
     }
@@ -49,6 +49,23 @@ public class WordCRUD implements ICRUD {
     @Override
     public int delete(Object obj) {
         return 0;
+    }
+
+    public void deleteWord() {
+        System.out.println("=> 삭제할 단어 검색 : ");
+        String keyword = s.next();
+        ArrayList<Integer> idList = this.listAll(keyword);
+        System.out.println("=> 삭제할 번호 선택 : ");
+        int id = s.nextInt();
+        System.out.println("=> 정말로 삭제하실래요?(Y/n)? ");
+        String answer = s.next();
+        if(answer.equals("Y")) {
+            list.remove((int)idList.get(id-1));
+            System.out.println("단어가 삭제되었습니다.");
+        }
+        else {
+            System.out.println("취소되었습니다.");
+        }
     }
 
     @Override
@@ -65,39 +82,44 @@ public class WordCRUD implements ICRUD {
     }
 
     public ArrayList<Integer> listAll(String keyword) {
-        ArrayList<Integer> idlist = new ArrayList<>();
+        ArrayList<Integer> idList = new ArrayList<>();
         int j = 0;
         System.out.println("------------------------------");
         for(int i = 0; i < list.size(); i++) {
             String word = list.get(i).getWord();
             if(word.contains(keyword)) {
                 System.out.println((j+1) + " " + list.get(i).toString());
-                idlist.add(i);
+                idList.add(i);
                 j++;
             }
         }
         System.out.println("------------------------------\n");
-        return idlist;
+        return idList;
     }
 
     public void listLevel() {
         System.out.println("원하는 난이도(1,2,3) 입력 : ");
         int chooseLevel = s.nextInt();
+        int j = 0;
         System.out.println("------------------------------");
         for(int i = 0; i < list.size(); i++) {
             if(chooseLevel == list.get(i).getLevel()) {
-                System.out.println((i + 1) + " " + list.get(i).toString());
+                System.out.println((j + 1) + " " + list.get(i).toString());
+                j++;
             }
         }
         System.out.println("------------------------------\n");
     }
 
     public void listSearch() {
+        System.out.println("원하는 단어 검색 : ");
         String searchWord = s.next();
+        int j = 0;
         System.out.println("------------------------------");
         for(int i = 0; i < list.size(); i++) {
             if(list.get(i).getWord().contains(searchWord)) {
-                System.out.println((i + 1) + " " + list.get(i).toString());
+                System.out.println((j + 1) + " " + list.get(i).toString());
+                j++;
             }
         }
         System.out.println("------------------------------\n");
