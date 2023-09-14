@@ -40,12 +40,14 @@ public class WordManager {
                     wordCRUD.listLevel();
                     break;
                 case 3:
+                    System.out.println("원하는 단어 검색 : ");
                     wordCRUD.listSearch();
                     break;
                 case 4:
                     wordCRUD.addWord();
                     break;
                 case 5:
+                    wordCRUD.updateWord();
                     break;
                 case 6:
                     break;

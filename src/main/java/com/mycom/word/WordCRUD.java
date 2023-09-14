@@ -30,8 +30,20 @@ public class WordCRUD implements ICRUD {
     }
 
     @Override
-    public int update(Object obj) {
-        return 0;
+    public int update(Object obj) { return 0; }
+
+    public void updateWord() {
+        System.out.println("=> 수정할 단어 검색 : ");
+        String keyword = s.next();
+        ArrayList<Integer> idlist = this.listAll(keyword);
+        System.out.println("=> 수정할 번호 선택 : ");
+        int id = s.nextInt();
+        s.nextLine();
+        System.out.println("=> 뜻 입력 : ");
+        String meaning = s.nextLine();
+        Word word = list.get(idlist.get(id-1));
+        word.setMeaning(meaning);
+        System.out.println("단어가 수정되었습니다.");
     }
 
     @Override
@@ -52,6 +64,22 @@ public class WordCRUD implements ICRUD {
         System.out.println("------------------------------\n");
     }
 
+    public ArrayList<Integer> listAll(String keyword) {
+        ArrayList<Integer> idlist = new ArrayList<>();
+        int j = 0;
+        System.out.println("------------------------------");
+        for(int i = 0; i < list.size(); i++) {
+            String word = list.get(i).getWord();
+            if(word.contains(keyword)) {
+                System.out.println((j+1) + " " + list.get(i).toString());
+                idlist.add(i);
+                j++;
+            }
+        }
+        System.out.println("------------------------------\n");
+        return idlist;
+    }
+
     public void listLevel() {
         System.out.println("원하는 난이도(1,2,3) 입력 : ");
         int chooseLevel = s.nextInt();
@@ -65,7 +93,6 @@ public class WordCRUD implements ICRUD {
     }
 
     public void listSearch() {
-        System.out.println("원하는 단어 검색 : ");
         String searchWord = s.next();
         System.out.println("------------------------------");
         for(int i = 0; i < list.size(); i++) {
